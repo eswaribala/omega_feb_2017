@@ -1,0 +1,13 @@
+NH has 10+ id generator strategies (IDENTITY, sequence, HiLo, manual, increment, several GUIDs, etc), EF only has manual or SQL Server's IDENTITY;
+
+NH has lazy property support (note: not entities, this is for string, XML, etc properties), EF doesn't;
+NH has second level cache support (and, believe me, enterprise developers are using it) and EF doesn't;
+NH has support for custom types, even complex, with "virtual" properties, which includes querying for these virtual properties, EF doesn't;
+NH has formula properties, which can be any SQL, EF doesn't;
+NH has automatic filters for entities and collections, EF doesn't;
+NH supports collections of primitive types (strings, integers, etc) as well as components (complex types without identity), EF doesn't;
+NH supports 6 kinds of collections (list, set, bag, map, array, id array), EF only supports one;
+NH includes a proxy generator that can be used to customize the generated proxies, EF doesn't allow that;
+NH has 3 mapping options (.HBM.XML, by code, by attributes) and EF only two (by attributes, by code);
+NH allows query and insertion batching (this is because EF only really supports IDENTITY keys), EF doesn't;
+NH has several optimistic control strategies (column on the db, including Oracle's ORA_ROWSCN, timestamp, integer version, all, dirty columns), EF only supports SQL Server' TIMESTAMP or all
