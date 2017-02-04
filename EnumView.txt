@@ -1,0 +1,5 @@
+ @Html.DropDownListFor(m => m.GenderValue, 
+               Enum.GetValues(typeof(EFDemo.Models.Gender))
+               .Cast<EFDemo.Models.Gender>()
+               .Select(x => new SelectListItem { Text = x.ToString(),
+                   Value = ((int)x).ToString() }))  
