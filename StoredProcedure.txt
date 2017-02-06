@@ -1,0 +1,15 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[InsuranceInsert](@InsId int, @InsCode varchar(5), @addr varchar(50),@DOS datetime, @email varchar(25), @name varchar(25), @nominee varchar(25), @PhNo varchar(15), @Premium int, @SumAss bigInt ) 
+	
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	insert into P4701234.Insurance_tbl(DateOfService,InsuranceCode,InsuranceId, Name,Nominee,PhoneNo,Premium, SumAssured,Email, Address) values(@DOS,@InsCode,@InsId,@name,@nominee,@PhNo,@Premium,@SumAss,@email,@addr);
+END
