@@ -1,0 +1,15 @@
+Install-Package Microsoft.AspNet.WebApi.OData
+Install-Package Microsoft.AspNet.WebApi.Cors
+curl -X GET "http://localhost:51377/odata/\$metadata"
+curl -X GET "http://localhost:51377/odata/Insurance_tbl(5678)"
+http://localhost:55856/odata/Insurance_tbl?$top=2
+http://localhost:55856/odata/Insurance_tbl?$expand=Patient_tbl
+http://localhost:55856/odata/Insurance_tbl?$select=InsuranceId,Name
+http://localhost:55856/odata/Insurance_tbl?$select=InsuranceId,Name,Patient_tbl&$expand=Patient_tbl
+
+http://localhost:51377/odata/Insurance_tbl?$filter=InsuranceId eq 5678
+http://localhost:51377/odata/Insurance_tbl?$filter=InsuranceId gt 5678
+
+http://localhost:51377/odata/Insurance_tbl?$filter=substringof('Jay',Name)
+http://localhost:51377/odata/Insurance_tbl?$orderby=Name
+
