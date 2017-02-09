@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="css/main.css" />
+    <script type="text/javascript" src="Scripts/angular.js"></script>
+    <script type="text/javascript" src="Scripts/angular-messages.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+</head>
+<body ng-app="FormModule" ng-controller="FormCtl">
+    <form name="InsForm" ng-submit="submit()">
+        <fieldset>
+            <legend>Insurance Form</legend>
+            <div>
+            <input type="number" name="id" ng-model="InsModel.InsuranceId" placeholder="Insurance Id" required /> 
+            <div ng-messages="InsForm.id.$error">
+                <div ng-message="Required">
+                    Id Required
+                </div>               
+            </div> 
+            </div>
+            <div>
+                <input type="text" name="insCode" ng-model="InsModel.InsuranceCode" placeholder="Insurance Code" required />
+                <div ng-messages="InsForm.insCode.$error">
+                    <div ng-message="Required">
+                        Insurance Code Required
+                    </div>
+                </div> 
+            </div>
+            <div>
+                <input type="text" name="fullName" ng-model="InsModel.Name" placeholder="Name" required />
+                <div ng-messages="InsForm.fullName.$error">
+                    <div ng-message="Required">
+                       Name Required
+                    </div>
+                </div> 
+            </div>
+            <div>
+                <input type="text" name="address" ng-model="InsModel.Address" placeholder="Address" ng-minlength="5" ng-maxlength="100" required />
+                <div ng-messages="InsForm.address.$error">
+                    <div ng-message="Required">
+                        Address Required
+                    </div>
+                </div> 
+             </div>
+            <div>
+                <input type="text" name="phoneNo" ng-model="InsModel.PhoneNo" placeholder="+919999999999" />
+                <div ng-messages="InsForm.phoneNo.$error">
+                    <div ng-message="Required">
+                      PhoneNo Required
+                    </div>
+                </div> 
+            </div>
+            <div>
+                <input type="number" name="premium" ng-model="InsModel.Premium" placeholder="Premium" required />
+                <div ng-messages="InsForm.premium.$error">
+                    <div ng-message="Required">
+                        Premium Required
+                    </div>
+                </div> 
+             </div>
+            <div>
+                <input type="number" name="sumAssured" ng-model="InsModel.SumAssured" placeholder="Sum Assured" required />
+                <div ng-messages="InsForm.sumAssured.$error">
+                    <div ng-message="Required">
+                        Sum Assured Required
+                    </div>
+                </div> 
+            </div>
+            <div>
+                <input type="date" name="dos" ng-model="InsModel.DateOfService" placeholder="Date of Service" required />
+                <div ng-messages="InsForm.dos.$error">
+                    <div ng-message="Required">
+                       Date of Service Required
+                    </div>
+                </div> 
+            </div>
+            <div>
+
+                <input type="email" name="email" ng-model="InsModel.Email" placeholder="sample@gmail.com" required />
+                <div ng-messages="InsForm.email.$error">
+                    <div ng-message="Required">
+                        Email Required
+                    </div>
+                </div> 
+            </div>
+            <div>
+                 <input type="text" name="nominee" ng-model="InsModel.Nominee" placeholder="Nominee" required />
+                <div ng-messages="InsForm.nominee.$error">
+                    <div ng-message="Required">
+                        Nominee Required
+                    </div>
+                </div> 
+            </div>
+            <input type="submit" value="submit" />
+        </fieldset>
+    </form>
+</body>
+</html>
