@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="css/main.css" />
+    <script type="text/javascript" src="Scripts/angular.js"></script>
+    <script type="text/javascript" src="Scripts/Chart.js"></script>
+    <script type="text/javascript" src="Scripts/angular-chart.js"></script>
+   
+    <script type="text/javascript" src="js/chartscript.js"></script>
+
+</head>
+<body ng-app="ChartModule" >
+    <section id="sec1">
+        <div class="charts" ng-controller="LineCtrl">
+            <canvas id="line" class="chart chart-line" chart-data="data"
+                    chart-labels="labels" chart-series="series" chart-options="options"
+                    chart-dataset-override="datasetOverride" chart-click="onClick">
+
+            </canvas>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="charts" ng-controller="BarCtrl">
+            <canvas id="bar" class="chart chart-bar"
+                    chart-data="data" chart-labels="labels">
+                chart-series="series"
+            </canvas>
+        </div>
+        <div id="doughnut" ng-controller="DoughnutCtrl">
+            <canvas id="doughnut" class="chart chart-doughnut"
+                    chart-data="data" chart-labels="labels"></canvas>
+        </div>
+
+    </section>
+    <section id="sec2">
+        <div id="radar" ng-controller="RadarCtrl">
+            <canvas id="radar" class="chart chart-radar"
+                    chart-data="data" chart-options="options" chart-labels="labels"></canvas> 
+        </div>
+
+        <div id="mixed" ng-controller="MixedChartCtrl" >
+            <canvas id="base" class="chart-bar"
+                    chart-data="data" chart-labels="labels" chart-colors="colors"
+                    chart-dataset-override="datasetOverride"></canvas>
+        </div>
+    </section>
+
+</body>
+</html>
